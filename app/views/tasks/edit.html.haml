@@ -1,0 +1,4 @@
+%h2.dailytask-name タスクの変更
+= form_with(url: task_path, local: true, method: :PATCH) do |form|
+  = form.text_field :task, placeholder: "タスクを変更する", class: 'dailytask-name__text'
+  = form.submit "変更", class: "search-btn"

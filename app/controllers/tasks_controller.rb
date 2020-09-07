@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(task: params[:task])
+    Task.create(task_params)
     redirect_to root_path
   end
 
@@ -21,8 +21,12 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params[:id])
-    task.update(task: params[:task])
+    task.update(task_params)
     redirect_to root_path
+  end
+
+  def task_params
+    params.permit(:task, :weektask)
   end
 
 end
