@@ -1,0 +1,40 @@
+.Task
+  .dailytask
+    %h2.dailytask-name 今日のタスク
+    = form_with(url: tasks_path, local: true, method: :post) do |form|
+      = form.text_field :task, placeholder: "タスクを追加する", class: 'dailytask-name__text'
+      = form.submit "追加", class: "search-btn"
+    .option
+      - @tasks.each do |task|
+        .content
+          .content-task
+            タスク:
+            =task.task
+          .content-time
+            作成日:
+            =task.created_at.strftime('%m/%d')
+          .content-opition
+            = link_to '完了', task_path(task.id), method: :delete
+            = link_to '編集', edit_task_path(task.id), method: :get
+
+
+  .weektask
+    %h2.weektask-name 今週のタスク
+    = form_with(url: tasks_path, local: true, method: :post) do |form|
+      = form.text_field :weektask, placeholder: "タスクを追加する"
+      = form.submit "タスク", class: "search-btn"
+    .option
+      - @tasks.each do |task|
+        %div
+          =task.task
+          = link_to '完了', task_path(task.id), method: :delete
+          = link_to '編集', edit_task_path(task.id), method: :get
+
+  .completetask
+    %h2.completetask-name 完了タスク
+    .option
+      - @tasks.each do |task|
+        %div
+          =task.task
+          =task.created_at
+          = link_to '削除', task_path(task.id), method: :delete

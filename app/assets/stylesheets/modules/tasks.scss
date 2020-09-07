@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  background-image: url("http://aquabeauties.com/wp-content/uploads/2020/09/B83A85A4-2A86-4957-B821-FBEE7332BA68.jpg");
+  background-size: cover;
+}
+
+.header {
+  height: 70px;
+  &__name {
+    color: rgb(157, 247, 139);
+    text-align: center;
+    font-size: 36px;
+    line-height: 70px;
+    font-weight: 900;
+    font-family: Comic Sans MS;
+  }
+}
+
+.Task {
+  display: flex;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  .dailytask {
+    width: 600px;
+    border: solid 1px yellow;
+    h2 {
+      color: yellowgreen;
+      font-size: 20px;
+      text-decoration: underline;
+      margin: 10px 0 10px 10px;
+    }
+    form {
+      margin-left: 10px;
+    }
+    .option {
+      .content {
+        background-color:#00FFFF;
+        opacity: 0.7;
+        width: 200px;
+        margin: 10px 0 0 10px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .weektask {
+    width: 600px;
+    border: solid 1px yellow;
+  }
+  .completetask {
+    width: calc(100vw - 1200px);
+    border: solid 1px yellow;
+  }
+}
+
+footer {
+  height: 30px;
+  background-color: black;
+  color: #ffffff;
+  p {
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: serif;
+  }
+}
