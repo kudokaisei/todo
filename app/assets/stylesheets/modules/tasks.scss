@@ -1,22 +1,21 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  box-sizing: border-box;
   background-image: url("http://aquabeauties.com/wp-content/uploads/2020/09/B83A85A4-2A86-4957-B821-FBEE7332BA68.jpg");
   background-size: cover;
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
   height: 70px;
   &__name {
     color: rgb(157, 247, 139);
-    text-align: center;
     font-size: 36px;
     line-height: 70px;
     font-weight: 900;
     font-family: Comic Sans MS;
+  }
+  &__sub {
+    display: flex;
   }
 }
 
