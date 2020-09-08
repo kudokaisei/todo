@@ -24,11 +24,17 @@ body {
       font-family: Comic Sans MS;
       margin-right: 10px;
     }
+
     ul {
+      font-size: 20px;
+      padding: 1px;
+      border: solid 1px yellow;
+      list-style: none;
+      line-height: 70px;
+      margin-right: 10px;
       text-decoration: none;
-        color: rgb(157, 247, 139);
-        line-height: 70px;
-        margin-right: 10px;
+      color: #ffffff;
+    }
   }
 }
 

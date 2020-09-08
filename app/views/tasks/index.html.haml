@@ -4,10 +4,8 @@
     %h3.header__userName
       User:
       = current_user.name
-    %ul.header__iconList
-      %li.header__Icon
-      = link_to edit_user_path(current_user) do
-        = icon('fas', 'cog')
+    %ul.header__edit
+      = link_to 'EDIT', edit_user_path(current_user), method: :get
 .Task
   .dailytask
     %h2.dailytask-name 今日のタスク
@@ -18,6 +16,7 @@
       - @tasks.each do |task|
         .content
           .content-task
+            = current_user.name
             タスク:
             =task.task
           .content-time
