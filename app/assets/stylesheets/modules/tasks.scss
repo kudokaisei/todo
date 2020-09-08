@@ -1,6 +1,6 @@
 body {
   background-image: url("http://aquabeauties.com/wp-content/uploads/2020/09/B83A85A4-2A86-4957-B821-FBEE7332BA68.jpg");
-  background-size: cover;
+  background-size: auto;
 }
 
 .header {
@@ -16,6 +16,19 @@ body {
   }
   &__sub {
     display: flex;
+    h3 {
+      color: rgb(157, 247, 139);
+      font-size: 25px;
+      line-height: 70px;
+      font-weight: 500;
+      font-family: Comic Sans MS;
+      margin-right: 10px;
+    }
+    ul {
+      text-decoration: none;
+        color: rgb(157, 247, 139);
+        line-height: 70px;
+        margin-right: 10px;
   }
 }
 
