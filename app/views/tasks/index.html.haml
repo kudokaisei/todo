@@ -2,10 +2,11 @@
   %h1.header__name ToDo App
   .header__sub
     %h3.header__sub__userName
-      User:
+      name:
       = current_user.name
     = link_to edit_user_path(current_user), class: "header__sub__edit" do
       Edit 
+
 .Task
   .dailytask
     %h2.dailytask-name 今日のタスク
@@ -15,8 +16,10 @@
     .option
       - @tasks.each do |task|
         .content
-          .content-task
+          .content-name
+            担当者:
             = current_user.name
+          .content-task
             タスク:
             =task.task
           .content-time
