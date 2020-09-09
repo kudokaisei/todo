@@ -26,14 +26,16 @@ body {
       margin-right: 20px;
     }
 
-    &__edit {
-      color: rgb(121, 162, 250);
-      font-size: 20px;
-      height: 40px;
-      line-height: 75px;
-      margin-right: 20px;
-      text-decoration: none;
-      font-family: Comic Sans MS;
+    ul {
+      .edit {
+        color: rgb(121, 162, 250);
+        font-size: 20px;
+        height: 40px;
+        line-height: 75px;
+        margin-right: 20px;
+        text-decoration: none;
+        font-family: Comic Sans MS;
+      }
     }
   }
 }
@@ -42,8 +44,13 @@ body {
   display: flex;
   height: calc(100vh - 100px);
   width: 100vw;
+  .task-group {
+    width: 250px;
+    border: solid 1px yellow;
+    color: white;
+  }
   .dailytask {
-    width: 600px;
+    width: 700px;
     border: solid 1px yellow;
     h2 {
       color: yellowgreen;
@@ -53,6 +60,23 @@ body {
     }
     form {
       margin-left: 10px;
+      .button {
+        display       : inline-block;
+        border-radius : 50%;
+        font-size     : 11pt;
+        text-align    : center;
+        cursor        : pointer;
+        padding       : 8px 7px;
+        background    : #ffff1a;
+        color         : #000000;
+        line-height   : 1em;
+        transition    : .3s;
+        border        : 2px solid #ffff1a;
+      }
+      .button:hover {
+        color         : #ffff1a;
+        background    : #000000;
+      }
     }
     .option {
       .content {
@@ -64,12 +88,8 @@ body {
       }
     }
   }
-  .weektask {
-    width: 600px;
-    border: solid 1px yellow;
-  }
   .completetask {
-    width: calc(100vw - 1200px);
+    width: calc(100vw - 950px);
     border: solid 1px yellow;
   }
 }
