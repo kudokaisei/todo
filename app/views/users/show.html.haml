@@ -1,0 +1,12 @@
+.option
+  %p
+    = @name
+    さんの投稿
+  - @tasks.each do |task|
+    .content
+      .content-task
+        タスク:
+        =task.task
+      .content-time
+        作成日:
+        =task.created_at.strftime('%m/%d')

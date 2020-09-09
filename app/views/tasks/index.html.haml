@@ -22,7 +22,7 @@
         .content
           .content-name
             担当者:
-            = task.user.name
+            = link_to task.user.name, user_path(task.user.id)
           .content-task
             タスク:
             =task.task
