@@ -1,12 +1,16 @@
 %header.header
   %h1.header__name ToDo App
-  .header__sub
-    %h3.header__sub__userName
+  %ul
+    %li.heder__info
       name:
       = current_user.name
-    %ul
-      = link_to edit_user_path(current_user), class: "edit" do
-        Edit 
+      %ul
+        %li
+          %a{href: user_path(current_user)} マイページ
+        %li
+          %a{href: "#"} タスク作成
+        %li
+          %a{href: edit_user_path(current_user)} アカウント編集
 
 .Task
   .task-group
