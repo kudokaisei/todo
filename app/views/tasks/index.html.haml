@@ -31,9 +31,8 @@
         .content-task
           タスク:
           =task.task
-        .content-time
-          作成日:
-          =task.created_at.strftime('%m/%d')
+        .content-details
+          = link_to '※詳細', task_path(task.id), method: :get
         .content-opition
           = link_to '完了', task_path(task.id), method: :delete
           = link_to '編集', edit_task_path(task.id), method: :get
