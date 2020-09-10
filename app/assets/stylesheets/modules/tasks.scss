@@ -15,6 +15,7 @@ body {
     font-family: Comic Sans MS;
     margin-left: 20px;
   }
+  
   &__sub {
     display: flex;
     &__userName {
@@ -28,6 +29,8 @@ body {
 
     ul {
       .edit {
+        border: solid 1px yellow;
+        padding: 5px;
         color: rgb(121, 162, 250);
         font-size: 20px;
         height: 40px;
@@ -43,16 +46,15 @@ body {
 .Task {
   display: flex;
   height: calc(100vh - 100px);
-  width: 100vw;
   .task-group {
     width: 250px;
     border: solid 1px yellow;
     color: white;
   }
-  .dailytask {
+  .task-info {
     width: 700px;
     border: solid 1px yellow;
-    h2 {
+    h3 {
       color: yellowgreen;
       font-size: 20px;
       text-decoration: underline;
@@ -78,14 +80,12 @@ body {
         background    : #000000;
       }
     }
-    .option {
-      .content {
-        background-color:#00FFFF;
-        opacity: 0.7;
-        width: 200px;
-        margin: 10px 0 0 10px;
-        padding-left: 10px;
-      }
+    .content {
+      background-color:#00FFFF;
+      opacity: 0.7;
+      width: 180px;
+      margin: 10px 0 0 10px;
+      padding-left: 10px;
     }
   }
   .completetask {
