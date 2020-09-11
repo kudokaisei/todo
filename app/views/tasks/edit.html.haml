@@ -2,6 +2,8 @@
   .task
     %h3.dailytask-name タスクの編集
     = form_with(url: task_path, local: true, method: :PATCH) do |form|
-      = form.text_field :task, placeholder: "タスクを変更する", class: 'dailytask-name__text'
-      = form.text_area :details, placeholder: "タスクを追加する", class: 'dailytask-name__text'
-      = form.submit "変更", class: "button"
+      .text 
+        = form.text_field :task, placeholder: "タスクを追加する"
+      .textarea 
+        = form.text_area :detalis, placeholder: "締め切り日/概要"
+        = form.submit "追加", class: 'button'
