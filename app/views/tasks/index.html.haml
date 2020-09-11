@@ -37,11 +37,10 @@
             タスク:
             =task.task
           .content-opition
-            = link_to '完了', task_path(task.id), method: :delete
-            = link_to '編集', edit_task_path(task.id), method: :get
+            = link_to '完了', task_path(task.id), method: :delete, class: 'complete'
+            = link_to '編集', edit_task_path(task.id), method: :get, class: 'edit'
         .content-details
           = simple_format(h(task.detalis))
-
   .completetask
     %h2.completetask-name 完了タスク
 
