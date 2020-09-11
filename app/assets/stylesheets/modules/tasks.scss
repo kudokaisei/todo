@@ -131,11 +131,21 @@ body {
       }
     }
     .content {
-      background-color:#00FFFF;
-      opacity: 0.7;
-      width: 180px;
-      margin: 10px 0 0 10px;
-      padding-left: 10px;
+      display: flex;
+      .content-main {
+        background-color:#00FFFF;
+        opacity: 0.7;
+        width: 180px;
+        margin: 10px 0 0 10px;
+        padding-left: 10px;
+      }
+      .content-details {
+        background-color:#00FFFF;
+        opacity: 0.7;
+        width: 400px;
+        margin: 10px 0 0 10px;
+        padding-left: 10px;
+      }
     }
   }
   .completetask {

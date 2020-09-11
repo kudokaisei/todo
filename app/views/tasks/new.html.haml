@@ -1,0 +1,4 @@
+%h3.dailytask-name タスクの詳細の編集
+= form_with(model: @task, local: true) do |form|
+  = form.text_area :details
+  = form.submit "追加"
