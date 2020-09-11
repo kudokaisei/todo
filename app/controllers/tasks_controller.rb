@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
   def index
-    @task = Task.new
     @tasks = Task.includes(:user)
   end
 
@@ -26,7 +25,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.permit(:task, :weektask).merge(user_id: current_user.id)
+    params.permit(:task, :detalis).merge(user_id: current_user.id)
   end
 
 end

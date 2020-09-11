@@ -14,29 +14,33 @@
 
 .Task
   .task-group
-    %h2.task-groupname グループ名追加
+    %h2.task-groupname グループ追加
 
   .task-info
-    %h3.dailytask-name 今日のタスク
-    
-    = form_with(url: tasks_path, local: true, method: :post) do |form|
-      = form.text_field :task, placeholder: "タスクを追加する", class: 'dailytask-name__text'
-      = form.submit "追加", class: "button"
+    = form_with(url: tasks_path, local: true,) do |form|
+      .text 
+        %p タスク内容
+        = form.text_field :task, placeholder: "タスクを追加する"
+        タスクの詳細
+      .textarea 
+        = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
+        = form.submit "追加", class: 'button'
+
 
     - @tasks.each do |task|
       .content
-        .content-name
-          担当者:
-          = link_to task.user.name, user_path(task.user.id)
-        .content-task
-          タスク:
-          =task.task
+        .content-main
+          .content-name
+            担当者:
+            = link_to task.user.name, user_path(task.user.id)
+          .content-task
+            タスク:
+            =task.task
+          .content-opition
+            = link_to '完了', task_path(task.id), method: :delete, class: 'complete'
+            = link_to '編集', edit_task_path(task.id), method: :get, class: 'edit'
         .content-details
-          = link_to '※詳細', task_path(task.id), method: :get
-        .content-opition
-          = link_to '完了', task_path(task.id), method: :delete
-          = link_to '編集', edit_task_path(task.id), method: :get
-
+          = simple_format(h(task.detalis))
   .completetask
     %h2.completetask-name 完了タスク
 
