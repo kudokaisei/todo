@@ -104,16 +104,9 @@ body {
   .task-info {
     width: 700px;
     border: solid 1px yellow;
-  
-    h3 {
-      color: yellowgreen;
-      font-size: 20px;
-      text-decoration: underline;
-      margin: 10px 0 10px 10px;
-    }
     form {
       .text {
-        color: white;
+        color: yellow;
         width: 200px;
         margin-left: 10px;
       }
@@ -149,14 +142,35 @@ body {
         opacity: 0.8;
         width: 180px;
         margin: 10px 0 0 10px;
-        padding-left: 10px;
+        padding: 5px;
+        .content-option {
+          display: flex;
+          .complete{
+            text-decoration: none;
+            padding-right: 15px;
+            color: red;
+          }
+          .edit {
+            text-decoration: none;
+            padding-left: 15px;
+            color: red;
+          }
+          .complete:hover { 
+            font-weight: 600;
+          }
+          .edit:hover { 
+            font-weight: 600;
+          }
+        }
       }
+
+
       .content-details {
         background-color:#00FFFF;
         opacity: 0.8;
         width: 400px;
         margin: 10px 0 0 10px;
-        padding-left: 10px;
+        padding: 5px;
       }
     }
   }
@@ -174,7 +188,6 @@ body {
     h3 {
       color: yellowgreen;
       font-size: 20px;
-      text-decoration: underline;
       margin: 10px 0 10px 10px;
     }
     form {

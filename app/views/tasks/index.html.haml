@@ -8,7 +8,7 @@
         %li
           %a{href: user_path(current_user)} マイページ
         %li
-          %a{href: "#"} タスク作成
+          %a{href: "#"} グループ作成
         %li
           %a{href: edit_user_path(current_user)} アカウント編集
 
@@ -36,13 +36,19 @@
           .content-task
             タスク:
             =task.task
-          .content-opition
-            = link_to '完了', task_path(task.id), method: :delete, class: 'complete'
-            = link_to '編集', edit_task_path(task.id), method: :get, class: 'edit'
+          %ul.content-option
+            %li
+            = link_to '完了✔️', task_path(task.id), class: 'complete', method: :delete
+            %p /
+            %li
+            = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
         .content-details
           = simple_format(h(task.detalis))
   .completetask
     %h2.completetask-name 完了タスク
+
+
+
 
 %footer
   %p Copyright ToDoアプリ 2020.
