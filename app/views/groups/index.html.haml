@@ -1,0 +1,19 @@
+%header.header
+  %h1.header__name ToDo App
+  %ul
+    %li.heder__info
+      name:
+      = current_user.name
+      %ul
+        %li
+          %a{href: user_path(current_user)} マイページ
+        %li
+          %a{href: new_group_path} グループ作成
+        %li
+          %a{href: edit_user_path(current_user)} アカウント編集
+
+.wrapper
+  = render 'tasks/Task_group'
+
+%footer
+  %p Copyright ToDoアプリ 2020.

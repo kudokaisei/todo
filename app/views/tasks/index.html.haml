@@ -12,22 +12,26 @@
         %li
           %a{href: edit_user_path(current_user)} アカウント編集
 
-.Task
-  .task-group
-    %h2.task-groupname グループ追加
+.wrapper
+  .Task-group
+    - current_user.groups.each do |group|
+      .task-group
+        = link_to group_tasks_path(group) do
+          .Group__name
+            = group.name
 
-  .task-info
-    = form_with(url: tasks_path, local: true,) do |form|
-      .text 
-        %p タスク内容
-        = form.text_field :task, placeholder: "タスクを追加する"
-        タスクの詳細
-      .textarea 
-        = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
-        = form.submit "追加", class: 'button'
+  .Task-main
+    .task-info
+      = form_with url: group_tasks_path, local: true do |form|
+        .text 
+          %p タスク内容
+          = form.text_field :task, placeholder: "タスクを追加する"
+          タスクの詳細
+        .textarea 
+          = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
+          = form.submit "追加", class: 'button'
 
-
-    - @tasks.each do |task|
+      - @tasks.each do |task|
       .content
         .content-main
           .content-name
@@ -44,11 +48,8 @@
             = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
         .content-details
           = simple_format(h(task.detalis))
-  .completetask
-    %h2.completetask-name 完了タスク
-
-
-
+    .completetask
+      %h2.completetask-name 完了タスク
 
 %footer
   %p Copyright ToDoアプリ 2020.
