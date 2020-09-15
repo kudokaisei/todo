@@ -8,30 +8,25 @@
         %li
           %a{href: user_path(current_user)} マイページ
         %li
-          %a{href: new_group_path} グループ作成
+          %a{href: "#"} グループ作成
         %li
           %a{href: edit_user_path(current_user)} アカウント編集
 
-.wrapper
-  .Task-group
-    - current_user.groups.each do |group|
-      .task-group
-        = link_to group_tasks_path(group) do
-          .Group__name
-            = group.name
+.Task
+  = render 'tasks/Task_group'
 
-  .Task-main
-    .task-info
-      = form_with url: group_tasks_path, local: true do |form|
-        .text 
-          %p タスク内容
-          = form.text_field :task, placeholder: "タスクを追加する"
-          タスクの詳細
-        .textarea 
-          = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
-          = form.submit "追加", class: 'button'
+  .task-info
+    = form_with model: [@group, @task], html: {class: "Form"}, local: true do |form|
+      .text 
+        %p タスク内容
+        = form.text_field :task, placeholder: "タスクを追加する"
+        タスクの詳細
+      .textarea 
+        = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
+        = form.submit "追加", class: 'button'
 
-      - @tasks.each do |task|
+
+    - @tasks.each do |task|
       .content
         .content-main
           .content-name
@@ -42,14 +37,17 @@
             =task.task
           %ul.content-option
             %li
-            = link_to '完了✔️', task_path(task.id), class: 'complete', method: :delete
+            = link_to '完了✔️', url: group.task.id, class: 'complete', method: :delete
             %p /
             %li
             = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
         .content-details
           = simple_format(h(task.detalis))
-    .completetask
-      %h2.completetask-name 完了タスク
+  .completetask
+    %h2.completetask-name 完了タスク
+
+
+
 
 %footer
   %p Copyright ToDoアプリ 2020.

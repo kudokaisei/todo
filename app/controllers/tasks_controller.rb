@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.includes(:user)
+    @tasks = @group.tasks.includes(:user)
   end
 
   def create
