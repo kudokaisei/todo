@@ -36,7 +36,12 @@
             .content-task
               タスク:
               =task.task
-          
+            %ul.content-option
+              %li
+              = link_to '完了✔️', edit_group_path(task.id), class: 'complete', method: :delete
+              %p /
+              %li
+              = link_to '編集✏️', group_path(task.id), class: 'edit', method: :get
           .content-details
             = simple_format(h(task.detalis))
   .completest

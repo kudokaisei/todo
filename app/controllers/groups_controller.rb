@@ -17,6 +17,12 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+    task = Task.find(params[:id])
+    task.destroy
+    redirect_to root_path
+  end
+
   def edit
     @group = Group.find(params[:id])
   end
