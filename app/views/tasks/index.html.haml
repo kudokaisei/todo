@@ -16,34 +16,30 @@
   = render 'tasks/Task_group'
 
   .task-info
-    = form_with model: [@group, @task], html: {class: "Form"}, local: true do |form|
-      .text 
-        %p タスク内容
-        = form.text_field :task, placeholder: "タスクを追加する"
-        タスクの詳細
-      .textarea 
-        = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
-        = form.submit "追加", class: 'button'
+    .task-form
+      = form_with model: [@group,@task], html: {class: "Form"}, local: true do |form|
+        .text 
+          %p タスク内容
+          = form.text_field :task, placeholder: "タスクを追加する"
+          タスクの詳細
+        .textarea 
+          = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
+          = form.submit "追加", class: 'button'
 
-
-    - @tasks.each do |task|
-      .content
-        .content-main
-          .content-name
-            担当者:
-            = link_to task.user.name, user_path(task.user.id)
-          .content-task
-            タスク:
-            =task.task
-          %ul.content-option
-            %li
-            = link_to '完了✔️', url: group.task.id, class: 'complete', method: :delete
-            %p /
-            %li
-            = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
-        .content-details
-          = simple_format(h(task.detalis))
-  .completetask
+    .task-content
+      - @tasks.each do |task|
+        .content
+          .content-main
+            .content-name
+              担当者:
+              = link_to task.user.name, user_path(task.user.id)
+            .content-task
+              タスク:
+              =task.task
+          
+          .content-details
+            = simple_format(h(task.detalis))
+  .completest
     %h2.completetask-name 完了タスク
 
 

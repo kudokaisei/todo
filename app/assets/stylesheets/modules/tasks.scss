@@ -96,66 +96,74 @@ body {
 .Task {
   display: flex;
   height: calc(100vh - 100px);
-  
+
   .task-info {
+    display: block;
     width: 700px;
-    border: solid 1px yellow;
-    form {
-      .text {
-        color: yellow;
-        width: 200px;
-        margin-left: 10px;
-      }
-      .textarea {
-        white-space: pre-wrap;
-        width: 610px;
-        height: 50px;
-        margin-left: 5px;
-        display: flex;
-      }
-      .button {
-        margin-left: 10px;
-        display       : inline-block;
-        border-radius : 50%;
-        font-size     : 11pt;
-        text-align    : center;
-        cursor        : pointer;
-        padding       : 8px 7px;
-        background    : #ffff1a;
-        color         : #000000;
-        transition    : .3s;
-        border        : 2px solid #ffff1a;
-      }
-      .button:hover {
-        color         : #ffff1a;
-        background    : #000000;
+    .task-form {
+      border: solid 1px yellow;
+      height: 150px;
+      form {
+        .text {
+          color: yellow;
+          width: 200px;
+          margin-left: 10px;
+        }
+        .textarea {
+          white-space: pre-wrap;
+          width: 610px;
+          height: 50px;
+          margin-left: 5px;
+          display: flex;
+        }
+        .button {
+          margin-left: 10px;
+          display       : inline-block;
+          border-radius : 50%;
+          font-size     : 11pt;
+          text-align    : center;
+          cursor        : pointer;
+          padding       : 8px 7px;
+          background    : #ffff1a;
+          color         : #000000;
+          transition    : .3s;
+          border        : 2px solid #ffff1a;
+        }
+        .button:hover {
+          color         : #ffff1a;
+          background    : #000000;
+        }
       }
     }
-    .content {
-      display: flex;
-      .content-main {
-        background-color:#00FFFF;
-        opacity: 0.8;
-        width: 180px;
-        margin: 10px 0 0 10px;
-        padding: 5px;
-        .content-option {
-          display: flex;
-          .complete{
-            text-decoration: none;
-            padding-right: 15px;
-            color: red;
-          }
-          .edit {
-            text-decoration: none;
-            padding-left: 15px;
-            color: red;
-          }
-          .complete:hover { 
-            font-weight: 600;
-          }
-          .edit:hover { 
-            font-weight: 600;
+
+    .task-content {
+      border: solid 1px yellow;
+      .content {
+        display: flex;
+        .content-main {
+          background-color:#00FFFF;
+          opacity: 0.8;
+          width: 180px;
+          margin: 10px 0 0 10px;
+          padding: 5px;
+          .content-option {
+            display: flex;
+            .complete{
+              text-decoration: none;
+              padding-right: 15px;
+              color: red;
+            }
+            .edit {
+              text-decoration: none;
+              padding-left: 15px;
+              color: red;
+            }
+            .complete:hover { 
+              font-weight: 600;
+            }
+            .edit:hover { 
+              font-weight: 600;
+            }
           }
         }
       }
