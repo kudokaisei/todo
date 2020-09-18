@@ -96,19 +96,19 @@ body {
 .Task {
   display: flex;
   height: calc(100vh - 100px);
-  font-size: 16px;
   .task-info {
+    font-size: 18px;
     color: yellow;
-    width: 210px;
-    border: solid 1px yellow;
+    width: 220px;
+    border: groove 5px skyblue;
     .text {
       color: yellow;
       width: 200px;
     }
     .textarea {
       white-space: pre-wrap;
-      height: 400px;
-      width: 200px;
+      height: 450px;
+      width: 205px;
     }
     .button {
       margin-top: 10px;
@@ -116,8 +116,8 @@ body {
     }
   }
   .task-content {
-    width: calc(100vw - 210px);
-    border: solid 1px yellow;
+    width: calc(100vw - 220px);
+    border: groove 5px skyblue;
     .content {
       display: flex;
       .content-main {
@@ -141,12 +141,12 @@ body {
           .complete:hover { 
             font-weight: 600;
           }
-          .edit:hover { 
-            font-weight: 600;
-          }
         }
       }
-      .content-details {
+      .content-main:hover {
+        opacity: 0.8;
+      }
+      .content-detalis {
         background-color:#00FFFF;
         opacity: 0.8;
         width: 400px;

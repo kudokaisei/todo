@@ -5,6 +5,10 @@ class TasksController < ApplicationController
 
   def create
     Task.create(task_params)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json
+    end
   end
 
   def destroy
