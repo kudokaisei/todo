@@ -20,7 +20,7 @@
         = form.text_field :task, placeholder: "タスク内容"
       .textarea 
         = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea'
-        = form.submit "追加", class: 'button'
+        = form.submit "タスク追加", class: 'button' 
 
   .task-content
     - @tasks.each do |task|
