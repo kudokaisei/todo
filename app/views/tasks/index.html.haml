@@ -16,11 +16,9 @@
   .task-info
     = form_with(url: tasks_path, local: true, class: 'Form') do |form|
       タスク追加
-      .text 
-        = form.text_field :task, placeholder: "タスク内容", class: 'form-text'
-      .textarea 
-        = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea', class: 'form-text'
-        = form.submit "追加", class: 'button', class: 'form-submit'
+      = form.text_field :task, placeholder: "タスク内容", class: 'form-text'
+      = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea', class: 'form-detalis'
+      = form.submit "追加", class: 'button', class: 'form-submit'
 
   .task-content
     - @tasks.each do |task|
@@ -34,12 +32,17 @@
             =task.task
           %ul.content-option
             %li
-            = link_to '完了✔️', task_path(task.id), class: 'complete', method: :delete
+            = link_to '完了✔️', class: 'complete'
             %p /
             %li
             = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
         .content-detalis
           = simple_format(h(task.detalis))
+  
+  .task-complete
+    %p 完了タスク
+    
+
 
 %footer
   %p Copyright ToDoアプリ 2020.

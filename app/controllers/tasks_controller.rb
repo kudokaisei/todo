@@ -4,10 +4,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(task_params)
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.json
+    @task = Task.new(task_params)
+    if @task.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json
+      end
+    else
+      render :index, alert: 'ToDoを入力してください'
     end
   end
 
