@@ -1,4 +1,5 @@
+json.task_id @task.id
 json.user_name @task.user.name
-json.task @task.task
 json.user_id  @task.user.id
-json.detalis  @task.detalis
+json.task @task.task
+json.detalis @task.detalis

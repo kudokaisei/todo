@@ -7,7 +7,6 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save
       respond_to do |format|
-        format.html { redirect_to root_path }
         format.json
       end
     else
@@ -18,7 +17,6 @@ class TasksController < ApplicationController
   def destroy
     task = Task.find(params[:id])
     task.destroy
-    redirect_to root_path
   end
 
   def edit
@@ -32,7 +30,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.permit(:task, :detalis).merge(user_id: current_user.id)
+    params.permit(:id, :task, :detalis).merge(user_id: current_user.id)
   end
 
 end
