@@ -1,2 +1,36 @@
-.wrapper
+%header.header
+  %h1.header__name ToDo App
+  %ul
+    %li.heder__info
+      name:
+      = current_user.name
+      %ul
+        %li
+          %a{href: user_path(current_user)} マイページ
+        %li
+          %a{href: "/groups/new"} グループ作成
+        %li
+          %a{href: edit_user_path(current_user)} アカウント編集
+
+.Task
   = render 'tasks/task-group'
+
+  .task-info
+    = form_with(url: tasks_path, local: true, class: 'Form') do |form|
+      %p タスク入力
+      = form.text_field :task, placeholder: "タスク内容", class: 'form-text'
+      = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea', class: 'form-detalis'
+      = form.submit "タスク追加", class: 'form-submit'
+
+  .task-content
+    .task-name
+      %p タスク一覧
+      %input{:type => "date"}
+    
+  
+  .task-complete
+    %p 完了タスク
+    
+
+%footer
+  %p Copyright ToDoアプリ 2020.
