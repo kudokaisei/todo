@@ -1,0 +1,11 @@
+.task-group
+  %p グループ一覧
+  = link_to edit_group_path(current_user), class: "group-icon" do
+    = icon('far', 'edit', class: "group-edit")
+  - current_user.groups.each do |group|
+    .Group
+      = link_to '#' do
+        .Group__name
+          = group.name
+        .Group__message
+          メッセージはまだありません

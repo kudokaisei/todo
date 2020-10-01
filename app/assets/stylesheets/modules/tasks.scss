@@ -99,12 +99,23 @@ body {
   .task-group {
     width: 250px;
     border: groove 5px skyblue;
+    display: flex;
     p {
       color: yellow;
       font-size: 18px;
       margin: 5px 0 5px 5px;
     }
+    .group-icon {
+      list-style: none;
+      margin: 5px 0 5px 5px;
+      .group-edit {
+        text-decoration: none;
+        color: #ffffff;
+        margin-right: 5px;
+      }
+    }
   }
+
   .task-info {
     width: 200px;
     border: groove 5px skyblue;
@@ -153,14 +164,6 @@ body {
       font-size: 18px;
       margin: 5px 0 5px 10px;
     }
-    .button {
-      margin-top: 10px;
-      width: 100px;
-    }
-  }
-  .task-content {
-    width: calc(100vw - 220px);
-    border: groove 5px skyblue;
     .content {
       display: flex;
       .content-main {
@@ -233,9 +236,16 @@ body {
       list-style: none;
       color: blue;
       opacity: 0.8;
-      width: 180px;
+      width: 200px;
+      height: 200px;
       margin: 0 0 0 5px;
       padding: 5px;
+      ul {
+        .list {
+          height: 18px;
+          font-size: 18px;
+        }
+      }
     }
   }
 }

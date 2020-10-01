@@ -13,8 +13,7 @@
           %a{href: edit_user_path(current_user)} アカウント編集
 
 .Task
-  .task-group
-    %p グループ
+  = render "side_bar"
 
   .task-info
     = form_with(url: tasks_path, local: true, class: 'Form') do |form|
