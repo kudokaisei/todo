@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2020_09_30_233127) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.text "detalis"
-    t.integer "group_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
