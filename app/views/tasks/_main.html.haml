@@ -8,7 +8,23 @@
 .task-content
   .task-name
     %p タスク一覧
-    %input{:type => "date"}
+      %input{:type => "date"}
+    - @tasks.each do |task|
+      .content{data: {task: {id: task.id}}}
+        .content-main
+          .content-name
+            担当者:
+            = link_to task.user.name, user_path(task.user.id)
+          .content-task
+            タスク:
+            =task.task
+          .content-edit
+            = link_to '編集✏️', edit_task_path(task.id), class: 'edit', method: :get
+            = link_to '削除🗑', task_path(task.id), class: 'delete', method: :delete
+        .content-detalis
+          = simple_format(h(task.detalis))
+        .content-option
+          %input.complete{:type => "button", :value => "✔︎"}
   
 
 .task-complete

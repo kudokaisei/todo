@@ -2,7 +2,7 @@
   %p グループ一覧
   - current_user.groups.each do |group|
     .Group
-      = link_to '#' do
+      = link_to group_tasks_path(group) do
         .Group__name
           = group.name
           = link_to edit_group_path(current_user), class: "group-icon" do

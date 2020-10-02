@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   before_action :set_group
 
   def index
-    @task = Task.new
     @tasks = @group.tasks.includes(:user)
   end
 
