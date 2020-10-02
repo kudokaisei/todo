@@ -1,5 +1,5 @@
 .task-info
-  = form_with(url: tasks_path, local: true, class: 'Form') do |form|
+  = form_with model: [@group, @task], html: {class: "Form"}, local: true do |form|
     %p タスク入力
     = form.text_field :task, placeholder: "タスク内容", class: 'form-text'
     = form.text_area :detalis, placeholder: "締め切り日/概要", class: 'textarea', class: 'form-detalis'

@@ -1,10 +1,13 @@
 class TasksController < ApplicationController
+  before_action :set_group
+
   def index
-    @tasks = Task.includes(:user)
+    @task = Task.new
+    @tasks = @group.tasks.includes(:user)
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = @group.tasks.new(task_params)
     if @task.save
       respond_to do |format|
         format.json
@@ -31,6 +34,10 @@ class TasksController < ApplicationController
 
   def task_params
     params.permit(:id, :task, :detalis).merge(user_id: current_user.id)
+  end
+
+  def set_group
+    @group = Group.find(params[:group_id])
   end
 
 end
